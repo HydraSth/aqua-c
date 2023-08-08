@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
+
+.btn-template{
+    width: 15vw;
+    border: none;
+}
+
+
+button{
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px #9e9e9e;
+    width: 80%; 
+    margin: 0 auto;
+    background-color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+body{
+    min-height: 80vh;
+}
+
+
+#slider{
+    transform: rotate(90deg);
+    position: relative;
+    right: 50%;
+    top: 50%;
+    display: inline;
+}
+
+.colorVerde{
+    color: #10A3BB;
+}
+
+.fondoVerde{
+    background-color: #0e899c;
+}
+
+li span{
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 5px;
+    font-weight: 800;
+    color: #0e899c;
+}
+
+#PagTitulo{
+    position: relative;
+    font-weight: 700;
+}
+
+#PagTitulo::after {
+    content: "";
+    position: absolute;
+    left: 40%;
+    bottom: -5px;
+    width: 20%;
+    border-radius: 15px;
+    border-bottom: 3px solid #b1b1b1;
+}
+
+@media(prefers-color-scheme:dark) or (prefers-color-scheme:light){
+    body{
+        background-color: #eee;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #slider{
+        right: 25%;
+        top: 50%;
+    }
+}
+
+#opcionesPlantillas{
+    display: none;
+}
