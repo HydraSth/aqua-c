@@ -31,19 +31,23 @@ btnCrear.addEventListener("click", () => {
         alert("Descripcion vacia");
         return;
 	}
-	let reader = new FileReader()
-	reader.onload = function (event) {
-		let urlImg = event.target.result // Obtener la URL base64 de la imagen cargada
-		remplazarContenido(Titulo, Subtitulo,Descripcion,urlImg)
+	if(Icono){
+		let reader = new FileReader()
+		reader.onload = function (event) {
+			let urlImg = event.target.result // Obtener la URL base64 de la imagen cargada
+			remplazarContenido(Titulo, Subtitulo,Descripcion,urlImg)
+		}
+		reader.readAsDataURL(Icono) // Leer el archivo como una URL base64
+	}else{
+		remplazarContenido(Titulo, Subtitulo,Descripcion)
 	}
-	reader.readAsDataURL(Icono) // Leer el archivo como una URL base64
 
 })
 
 function remplazarContenido(Titulo, Subtitulo,Descripcion,Icono) {
 	document.getElementById("TituloCanva").innerHTML = Titulo
 	document.getElementById("SubtituloCanva").innerHTML = Subtitulo
-	document.getElementById("DescripcionCanva").innerHTML = Descripcion
+	document.getElementById("DescripcionCanva").innerText = Descripcion
 	if(Icono != null){
 		document.getElementById("IconoCanva").style.display = "block"
 		document.getElementById("IconoCanva").src = Icono
